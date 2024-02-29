@@ -1,6 +1,11 @@
 from flask import Flask, render_template
 
+#Imports
+import pymongo
+import os
+
 app = Flask("TravelAgency")
+
 
 
 @app.route('/')
