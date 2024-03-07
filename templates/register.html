@@ -1,6 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!--Enregistrer un nouvelle utilisateur-->
+
+<div class="flex items_center justify-center">
+  <form method="POST" action="" class="bg-white px-8 py-6 rounded shadow-md">
+    <div class="mb-4" >
+      <label class="block text-gray-700 text-sm font-bold mb-2">
+        Utilisateur
+      </label>
+        <input type="text" name="utilisateur" placeholder="Entre ton nom"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">
+        Mot de passe
+      </label>
+        <input type="password" name ="mot_de_passe" placeholder="Choisis un mot de passe" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">
+        Confirmation de mot de passe
+      </label>
+        <input type="password" name="verif_mot_de_passe" placeholder="Retape ton mot de passe" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div>
+      <button type="submit" class=" font-bold bg-yellow-200 hover:bg-yellow-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >Créer un compte </button >
+    </div>
+  </form>
+</div>
+
 
 {% endblock %}
