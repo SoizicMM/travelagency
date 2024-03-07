@@ -4,8 +4,11 @@ from flask import Flask, render_template
 import pymongo
 import os
 
+#Création de l'application
 app = Flask("TravelAgency")
 
+#Connection à la bdd
+mongo = pymongo.MongoClient(os.getenv("MONGO_KEY"))
 
 
 @app.route('/')
@@ -16,6 +19,7 @@ def index():
 @app.route('/login')
 def login():
   return render_template("login.html")
+
 
 @app.route('/logout')
 def logout():
