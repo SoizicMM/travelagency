@@ -5,15 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Document</title>
+  <title>Travel Agency</title>
 </head>
-  <body>
+<body>
   <header class="w-full h-16 bg-indigo-600 drop-shadow-lg">
       <!-- Header -->
       <div class="container px-4 md:px-0 h-full mx-auto flex justify-between items-center">
             
-          <a class="text-yellow-400 text-xl font-bold italic" href="/">MAGIC<span
-                  class="text-white">TRAVEL</span></a>
+          <a class="text-yellow-400 text-xl font-bold italic" href="/">MAGIC
+            <span class="text-white">TRAVEL</span>
+          </a>
         <ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-50
           md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
          <!-- nav search -->
@@ -21,26 +22,34 @@
         
           <!--Menu du header -->
           <nav>
-          <ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-50
+            <ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-50
               md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
-              </li>
             <!--bouton pour menu-->
               <li>
                   <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/login">Se connecter</a>
               </li>
               <li>
                 <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/register">S'enregistrer</a>
-            </li>
+              </li>
             
             <!-- Lien temporaire, pour naviguer entre les pages -->
-            <li>
-              <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/continent">Continent</a>
-            </li>
+              <li>
+                <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/continent">Continent</a>
+              </li>
              
-          </ul>
-            </nav>
-          </div>
-
+            </ul>
+          </nav>
+        </ul>
+      </div>
+      <div class="bg-indigo-400 px-36 py-2 text-lg transition-bandeau-continents">
+        <ul class="flex justify-between">
+          <li> <a href="#"> Europe </a> </li>
+          <li> <a href="#"> Asie </a> </li>
+          <li> <a href="#"> Afrique </a> </li>
+          <li> <a href="#"> Amérique </a> </li>
+          <li> <a href="#"> Océanie </a> </li>
+        </ul>
+      </div>
   </header>
 
   <main>
@@ -135,6 +144,5 @@
     
 </footer>
 <!--fin du code-->
-  
 </body>
 </html>
