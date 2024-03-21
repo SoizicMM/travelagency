@@ -86,6 +86,11 @@ def destination():
 @app.route('/shop')
 def shop():
   return render_template("shop.html")
+ 
+  
+@app.route('/Validation')
+def validation():
+    return render_template("validation.html")
 
 
 app.run(host='0.0.0.0', port=81)
