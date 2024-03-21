@@ -83,5 +83,9 @@ def continent():
 def destination():
   return render_template("destination.html")
 
+@app.route('/shop')
+def shop():
+  return render_template("shop.html")
+
 
 app.run(host='0.0.0.0', port=81)
