@@ -2,9 +2,9 @@
 
 {% block content %}
   {% if erreur %}
-    <p class="text-red-600 text-center text-lg pb-2"><strong>Erreur:</strong> {{ erreur }} </p>
+    <p class="text-red-600 text-center text-lg pb-2 pt-14"><strong>Erreur:</strong> {{ erreur }} </p>
   {% endif %}
-<div class="flex items-center justify-center">
+<div class="flex items-center justify-center pt-14">
   <form method="POST" action="{{ url_for('login')}}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="utilisateur">

@@ -14,11 +14,11 @@
 } */
 
 #transition-bandeau-continents {
-  overflow: hidden;
+  overflow: hidden; 
   height: 0;
   transition : height is ease;
 }
 
 #transition-bandeau-continents.active {
-  height : 100px;
+  height : 50px;
 }
