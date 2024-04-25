@@ -1,4 +1,24 @@
+/* .transition-bandeau-continents {
+  transform: translate(-50%);
+  animation : apparition is forwards;
+}  */
+
+
+/* @keyframes apparition {
+  from {
+    top: -50px;
+  }
+  to {
+    top : 50%;
+  }
+} */
+
 #transition-bandeau-continents {
-  transform: translate(-50%, -50%);
-  transition: top 1s ease, opacity 1s ease;
+  overflow: hidden;
+  height: 0;
+  transition : height is ease;
+}
+
+#transition-bandeau-continents.active {
+  height : 100px;
 }
