@@ -2,12 +2,28 @@
 
 {% block content %}
 <!-- on code ici -->
-<h1>"FRANCFORT"</h1>
+<h1 class="pt-16">"FRANCFORT"</h1>
 
 <!-- partie de l'image -->
 <p>Redécouvrez la capitale de la saucisse !</p>
 
-<img src="./static/francfort.jpg" />
+<div class="flex justify-center">
+  <img src="./static/francfort.jpg" />
+</div>
+
+<!-- Partie des 2 textes -->
+<section class="flex justify-around">
+  <!-- partie texte de gauche -->
+  <div>
+    <h2> " Les sorties "</h2>
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ut ipsa modi excepturi molestias accusamus aut? Velit quaerat similique, doloribus dicta consequatur ea magnam sunt rem eligendi quos. Quo, officiis modi. Animi veniam architecto maiores explicabo! Eveniet aspernatur minus, id, beatae, error mollitia eos ducimus necessitatibus at sed quaerat ea.</p>
+  </div>
+  <!-- partie texte de droite -->
+  <div>
+    <h2> " Les hôtels/ Vols "</h2>
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur error, laudantium eius nisi nemo, fugiat unde quos, nihil voluptas quod incidunt labore inventore aliquid libero autem? Dolorum quasi labore dolorem, ab, omnis quae a repellendus quia debitis sint accusantium dolore! Corporis dolor fuga modi perspiciatis earum maiores ea, tempore natus?</p>
+  </div>
+</section>
 
 
 {% endblock %}
