@@ -21,20 +21,25 @@
         <ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-50
           md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
          <!-- nav search -->
-          <input class="place-items-center" type="search" id="gsearch" name="gsearch">
+          <input class="place-items-center" type="search" id="gsearch" name="gsearch" placeholder="Rechercher">
         
           <!--Menu du header -->
           <nav>
             <ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-50
               md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
             <!--bouton pour menu-->
+              {% if session['user'] %}
+              <li>
+                  <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/logout">Se déconnecter</a>
+              </li>
+              {% else %}
               <li>
                   <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/login">Se connecter</a>
               </li>
               <li>
                 <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/register">S'enregistrer</a>
               </li>
-            
+             {% endif %}
             <!-- Lien temporaire, pour naviguer entre les pages -->
               <li>
                 <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/continent">Continent</a>

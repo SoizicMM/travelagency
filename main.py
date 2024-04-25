@@ -11,6 +11,8 @@ app = Flask("Travel Agency")
 #Connection à la bdd
 mongo = pymongo.MongoClient(os.getenv("MONGO_KEY"))
 
+#Crookie de la session utilisateur
+app.secret_key = os.getenv("COOKIES_KEY")
 
 @app.route('/')
 def index():
