@@ -19,7 +19,12 @@
       <label class="block text-gray-700 text-sm font-bold mb-2">
         Mot de passe
       </label>
-        <input type="password" name ="mot_de_passe" placeholder="Choisis un mot de passe" class="shadow appearance-none border border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+        <input type="password" name ="mot_de_passe" placeholder="Choisis un mot de passe" class="shadow appearance-none border border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password">
+      <ul>
+        <li class="text-red-500" id="uppercase">Une majuscule</li>
+        <li class="text-red-500" id="lowercase">Une minuscule</li>
+        <li class="text-red-500" id="number">Un chiffre</li>
+      </ul>
     </div>
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2">
@@ -28,7 +33,7 @@
         <input type="password" name="verif_mot_de_passe" placeholder="Retape ton mot de passe" class="shadow appearance-none border border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     </div>
     <div>
-      <button type="submit" class=" font-bold bg-yellow-200 hover:bg-yellow-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >Créer un compte </button >
+      <button type="submit" class=" font-bold bg-yellow-200 hover:bg-yellow-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="submit-btn" disabled >Créer un compte </button >
     </div>
   </form>
 </div>
