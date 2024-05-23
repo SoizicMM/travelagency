@@ -22,3 +22,18 @@
 #transition-bandeau-continents.active {
   height : 50px;
 }
+
+.animation {
+  opacity : 0;
+  animation : fadeIn 6s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity : 1;
+  }
+}
+
