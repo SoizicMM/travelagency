@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="static/style.css" rel="stylesheet" />
+  <script defer src="static/app.js"></script>
+  <script defer src="static/static.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <script defer src="{{ url_for('static', filename='password.js') }}"></script>
+
+
+  <title>Travel Agency</title>
+</head>
+<body>
+  <header class="w-full h-16 bg-indigo-600 drop-shadow-lg">
+      <!-- Header -->
+      <div class="container px-4 md:px-0 h-full mx-auto flex justify-between items-center">
+
+          <a class="text-yellow-400 text-xl font-bold italic" href="/">MAGIC
+            <span class="text-white">TRAVEL</span>
+          </a>
+        <ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-50
+          md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+         <!-- nav search -->
+          <input class="place-items-center" type="search" id="gsearch" name="gsearch" placeholder="Rechercher">
+
+          <!--Menu du header -->
+          <nav>
+            <ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-50
+              md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+            <!--bouton pour menu-->
+              {% if session['user'] %}
+              <li>
+                  <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/logout">Se déconnecter</a>
+              </li>
+              {% else %}
+              <li>
+                  <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/login">Se connecter</a>
+              </li>
+              <li>
+                <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/register">S'enregistrer</a>
+              </li>
+             {% endif %}
+            <!-- Lien temporaire, pour naviguer entre les pages -->
+              <li>
+                <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/continent">Continent</a>
+              </li>
+
+            </ul>
+          </nav>
+        </ul>
+      </div>
+    <section id="transition-bandeau-continents">
+      <div class="bg-indigo-400 px-36 py-2 text-lg" >
+        <ul class="flex justify-between">
+          <li> <a href="#"> Europe </a> </li>
+          <li> <a href="#"> Asie </a> </li>
+          <li> <a href="#"> Afrique </a> </li>
+          <li> <a href="#"> Amérique </a> </li>
+          <li> <a href="#"> Océanie </a> </li>
+        </ul>
+
+      </div>
+      </section>
+  </header>
+
+  <main>
+  {% block content %}
+  {% endblock %}
+  </main>
+  <!-- intérieur du footer -->
+  <footer>
+
+
+    <div class="mx-6 py-10 text-center">
+      <h6 class="mb-4 ml-14 flex items-center justify-center font-semibold uppercase md:justify-start"> Nos Meilleurs Destinations </h6>
+      <section class="grid grid-cols-3">
+        <!-- nos meilleurs destination -->
+      <div class="flex justify-around">
+
+        <!-- premier colonne -->
+        <div class="mb-4  items-center justify-center">
+          <p><a href="#!" class="mb-4">Les Maldives</a></p>
+          <p><a href="#!" class="mb-4">Asie</a></p>
+          <p><a href="#!" class="mb-4">Les Alpes</a></p>
+          <p><a href="#!" class="mb-4">Brésil</a></p>
+
+        </div>
+
+        <!-- Useful links section -->
+        <!-- seconde colonne -->
+        <div>
+          <p><a href="#!" class="mb-4">Italie</a></p>  
+          <p><a href="#!" class="mb-4">Chicago</a></p>
+          <p><a href="#!" class="mb-4">Indonésie</a></p>
+          <p><a href="#!" class="mb-4">Océanie</a></p>
+        </div>
+      </div>
+
+        <!-- newsletter -->
+
+          <div class="flex space-x-6 px-4 py-12 mx-auto">
+
+            <div>
+              <form action="" method="post" target="_blank" class="justify-center">
+                <input aria-label="Email address" name="EMAIL" type="email" required="" class="w-full px-9 py-3 text-base leading-6 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md appearance-none focus:outline-none focus:shadow-outline focus:border-blue-300" placeholder="Enter your email">
+              </form>
+            </div>
+
+            <div class="rounded-md">
+              <button class="flex items-center justify-center w-full px-5 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 ">
+                Notify me
+              </button>
+            </div>
+
+          </div>
+
+        <!-- Contact section -->
+        <div>
+          <h6 class="mb-4 flex justify-center font-semibold uppercase"> Contact </h6>
+          <p class="mb-4 flex items-center justify-center">
+            <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"></svg>
+            </span>
+            1428 Elm Street
+          </p>
+          <p class="mb-4 flex items-center justify-center">
+            <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"></svg>
+            </span>
+            info@travelAgency.com
+          </p>
+          <p class="mb-4 flex items-center justify-center">
+            <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"></svg>
+            </span>
+            + 3360101010101
+          </p>
+          <p class="flex items-center justify-center">
+            <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"></svg>
+            </span>
+            + 3360101010101
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!--Copyright section-->
+    <div class="bg-black/5 p-6 text-center">
+      <p>
+        <span>© 2024 Copyright:</span>
+        <a class="font-semibold" href="/">TravelAgency</a>
+      </p>
+    </div>
+    <!--tchatbot-->
+    <div class="fixed bottom-0 right-0 mb-4 mr-4">
+        <button id="open-chat" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+            </svg>
+          Chatbot
+        </button>
+    </div>
+    <div id="chat-container" class="hidden fixed bottom-16 right-4 w-96">
+        <div class="bg-white shadow-md rounded-lg max-w-lg w-full">
+            <div class="p-4 border-b bg-blue-500 text-white rounded-t-lg flex justify-between items-center">
+                <p class="text-lg font-semibold">Chatbot</p>
+                <button id="close-chat" class="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="chatbox" class="p-4 h-80 overflow-y-auto">
+              <!-- Chat messages will be displayed here -->
+              <div class="mb-2 text-right">
+                <p class="bg-green-500 text-white rounded-lg py-2 px-4 inline-block">Bonjour je suis l'IA de Travel Agency</p>
+              </div>
+              <div class="mb-2 text-right">
+                <p class="bg-green-500 text-white rounded-lg py-2 px-4 inline-block">Comment puis-je vous aider ?</p>
+              </div>
+
+
+            </div>
+            <div class="p-4 border-t flex">
+                <input id="user-input" type="text" placeholder="Ecrivez un message" class="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button id="send-button" class="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition duration-300">Envoyer</button>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<!--fin du code-->
+
+</body>
+</html>
