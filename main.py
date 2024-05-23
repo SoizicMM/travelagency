@@ -95,4 +95,9 @@ def validation():
     return render_template("validation.html")
 
 
+@app.route('/recherche')
+def recherche():
+    return render_template("recherche.html")
+
+
 app.run(host='0.0.0.0', port=81)
