@@ -99,5 +99,9 @@ def validation():
 def recherche():
     return render_template("recherche.html")
 
+@app.route('/erreur')
+def erreur():
+    return render_template("erreur.html")
+
 
 app.run(host='0.0.0.0', port=81)
