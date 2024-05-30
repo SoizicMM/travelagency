@@ -101,7 +101,13 @@ def recherche():
 
 @app.route('/erreur')
 def erreur():
-    return render_template("erreur.html")
+  # declancher volontairement une erreur 404
+  return render_template("erreur.html"), 404
+# gestinaire erreur 404
+@app.errorhandler(404)
+def page_not_found(error):
+  return render_template("erreur.html"), 404
+
 
 
 app.run(host='0.0.0.0', port=81)
