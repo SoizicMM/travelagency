@@ -83,7 +83,9 @@ def continent():
 
 @app.route('/destination')
 def destination():
-  return render_template("destination.html")
+  db_destination = mongo.db.destination
+  destination = db_destination.find({})
+  return render_template("destination.html", destination=destination)
 
 @app.route('/shop')
 def shop():
