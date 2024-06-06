@@ -45,6 +45,7 @@ def login():
 def logout():
   session.clear()
   return redirect(url_for("index"))
+  
 
 #Route pour créer un compte
 @app.route('/register', methods=['POST','GET'])
@@ -95,6 +96,10 @@ def shop():
 @app.route('/Validation')
 def validation():
     return render_template("validation.html")
+
+@app.route('/profil')
+def profil():
+    return render_template("profil.html")
 
 
 @app.route('/recherche')
