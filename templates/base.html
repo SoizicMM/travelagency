@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <script defer src="static/app.js"></script>
   <script defer src="static/static.js"></script>
   <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"
+  
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
   crossorigin="anonymous"></script>
   <script defer src="{{ url_for('static', filename='password.js') }}"></script>
@@ -29,7 +31,7 @@
         <section>
           <div class="flex space-x-12">
             <!-- nav search -->
-            <input class="place-items-center" type="search" id="gsearch" name="gsearch" placeholder="Rechercher">
+            <input type="search" id="site-search" name="q" />
             <!--Menu du header -->
             <nav>
               <ul  class="flex justify-around space-x-8">

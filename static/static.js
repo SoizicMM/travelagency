@@ -63,3 +63,6 @@ function respondToUser(userMessage) {
 
 // Automatically open the chatbox on page load
 toggleChatbox();
+
+
+
