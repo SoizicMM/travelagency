@@ -131,7 +131,10 @@ def ville(id_post):
 
 @app.route('/shop')
 def shop():
-  return render_template("shop.html")
+  if 'user' in session :
+    return render_template("shop.html")
+  else:
+    return render_template("login.html")
  
   
 @app.route('/Validation')

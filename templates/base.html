@@ -19,9 +19,9 @@
   <title>Travel Agency</title>
 </head>
 <body>
-  <header class="h-16 bg-indigo-600 drop-shadow-lg">
+  <header class="h-16 bg-indigo-600 drop-shadow-lg align-middle">
       <!-- Header -->
-      <div class="py-6 px-4 flex justify-between items-center">
+      <div class="py-6 px-4 flex justify-between items-center h-16">
         <!-- coté gauche du header -->
         <section>
           <!-- titre -->
@@ -31,25 +31,33 @@
         <section>
           <div class="flex space-x-12">
             <!-- nav search -->
-            <input type="search" id="site-search" name="q" />
+            <div>
+            <input type="search" id="site-search" class="mt-2" name="q" />
+            </div>
             <!--Menu du header -->
             <nav>
-              <ul  class="flex justify-around space-x-8">
+              <ul class="flex justify-around space-x-8 w-80">
               <!--bouton pour menu-->
                 {% if session['user'] %}
-                <li>
-                  <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/profil">Profil</a>
-                  
-                  <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/logout">Se déconnecter</a>
+                <li class="flex space-x-2">
+                  <a href="/profil"><img src="/static/images/avatar_default.png" class="w-3/4 mt-2"/></a>
+
+                  <a class="text-white opacity-70 hover:opacity-100 duration-300 mt-2" href="/profil">Profil</a>
                 </li>
+                <li class="mt-2">
+                  <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/logout">Se déconnecter</a>
+                </li class="mt-2">
                 {% else %}
-                <li>
+                <li class="mt-2">
                   <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/login">Se connecter</a>
                 </li>
-                <li>
+                <li class="mt-2">
                 <a class="text-white opacity-70 hover:opacity-100 duration-300" href="/register">S'enregistrer</a>
                 </li>
-                {% endif %}            
+                {% endif %} 
+                <li>
+                  <a href="/shop"><img src="../static/images/panier.png" /></a>
+                </li>
               </ul>
             </nav>
           </div>
