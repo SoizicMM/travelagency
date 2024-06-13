@@ -5,6 +5,9 @@ import pymongo
 import os
 import bcrypt
 
+# Pour gérer les ObjectId
+from bson.objectid import ObjectId
+
 #Création de l'application
 app = Flask("Travel Agency")
 
@@ -81,12 +84,50 @@ def register():
 def continent():
   return render_template("continent.html")
 
-
+# Toutes les destinations
 @app.route('/destination')
 def destination():
   db_destination = mongo.db.destination
   destination = db_destination.find({})
   return render_template("destination.html", destination=destination)
+
+# Destination par continent 
+@app.route('/europe')
+def europe():
+  db_destination = mongo.db.destination
+  destination = db_destination.find({"continent": "Europe"})
+  return render_template("destination.html", destination=destination)
+
+@app.route('/amerique')
+def amerique():
+  db_destination = mongo.db.destination
+  destination = db_destination.find({"continent": "Amérique"})
+  return render_template("destination.html", destination=destination)
+
+@app.route('/asie')
+def asie():
+  db_destination = mongo.db.destination
+  destination = db_destination.find({"continent": "Asie"})
+  return render_template("destination.html", destination=destination)
+
+@app.route('/afrique')
+def afrique():
+  db_destination = mongo.db.destination
+  destination = db_destination.find({"continent": "Afrique"})
+  return render_template("destination.html", destination=destination)
+
+@app.route('/oceanie')
+def oceanie():
+  db_destination = mongo.db.destination
+  destination = db_destination.find({"continent": "Océanie"})
+  return render_template("destination.html", destination=destination)
+
+# Route d'une seule ville 
+@app.route("/ville/<id_post>")
+def ville(id_post):
+  db_destination = mongo.db.destination
+  destination = db_destination.find_one({"_id": ObjectId(id_post)})
+  return render_template("ville.html", destination=destination)
 
 @app.route('/shop')
 def shop():
@@ -100,6 +141,16 @@ def validation():
 @app.route('/profil')
 def profil():
     return render_template("profil.html")
+
+##############
+### ADMIN ####
+##############
+
+@app.route('/admin/back_lieux')
+def admin_lieux():
+  db_lieux = mongo.db.destination
+  lieux = db_lieux.find({})
+  return render_template('admin/back_lieux.html', lieux=lieux)
 
 
 @app.route('/recherche')

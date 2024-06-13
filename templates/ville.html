@@ -1,11 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for destination in destination %}
 <!-- on code ici -->
-<a href="/ville/{{destination['_id']}}">
 <h1 class="font-semibold text-2xl text-center py-4">{{ destination['ville'] }}</h1>
-</a>
 
 <!-- partie de l'image -->
 <p class="text-center text-lg pb-6">{{ destination['intro'] }}</p> 
@@ -19,7 +16,7 @@
   <!-- partie texte de gauche -->
   <div class="border-2 border-indigo-300 rounded-lg p-4">
     <h2 class="font-semibold text-lg text-indigo-600 mb-2">Les sorties :</h2>
-    <p>{{ destination['sortie']|truncate(500) }}</p>
+    <p>{{ destination['sortie'] }}</p>
   </div>
   <!-- partie texte de droite -->
   <div class="border-2 border-indigo-300 rounded-lg p-4">
@@ -27,6 +24,5 @@
     <p> {{ destination['hotel'] }}</p>
   </div>
 </section>
-{% endfor %}
 
 {% endblock %}
