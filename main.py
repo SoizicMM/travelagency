@@ -145,6 +145,37 @@ def validation():
 def profil():
     return render_template("profil.html")
 
+#######################
+### AJOUTER UN LIEU ###
+#######################
+# Route pour créer un nouveau lieu
+@app.route('/nouveau_lieu', methods=['POST', 'GET'])
+def nouveau_lieu():
+  # Si on essaye d'envoyer le formulaire
+  if request.method == 'POST':
+    # On appelle la table "destination" de la bdd
+    db_lieux = mongo.db.destination
+    ville = request.form['ville']
+    continent = request.form['continent']
+    intro = request.form['intro']
+    image = request.form['image']
+    sortie = request.form['sortie']
+    hotel = request.form['hotel']
+    # On insère ces nouvelles données dans la bdd
+    db_lieux.insert_one({
+      'ville': ville,
+      'continent': continent,
+      "intro" : intro,
+      'image' : image,
+      'sortie': sortie,
+      "hotel" : hotel,
+    })
+    return render_template("nouveau_lieu.html",
+                           erreur="Votre annonce a bien été soumise")
+  else:
+    return render_template("nouveau_lieu.html",
+      erreur="Veuillez saisir un titre et une description")
+
 ##############
 ### ADMIN ####
 ##############
