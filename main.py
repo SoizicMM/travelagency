@@ -122,7 +122,13 @@ def oceanie():
   destination = db_destination.find({"continent": "Océanie"})
   return render_template("destination.html", destination=destination)
 
-# Route d'une seule ville 
+############
+### CRUD ###
+############
+
+#####################
+### VOIR UN LIEU ####
+#####################
 @app.route("/ville/<id_post>")
 def ville(id_post):
   db_destination = mongo.db.destination
@@ -175,6 +181,45 @@ def nouveau_lieu():
   else:
     return render_template("nouveau_lieu.html",
       erreur="Veuillez saisir un titre et une description")
+
+
+#########################
+### MODIFIER UN LIEU ####
+#########################
+@app.route('/update_lieu/<id_post>', methods=['POST', 'GET'])
+def update_lieu(id_post):
+  db_lieux = mongo.db.destination
+  lieu = db_lieux.find_one({"_id": ObjectId(id_post)})
+  #Si l'on est en méthode GET
+  if request.method == "GET":
+    return render_template('modif_lieu.html', lieu=lieu)
+  #Sinon (méthode POST)
+  else:
+    ville = request.form['ville']
+    continent = request.form['continent']
+    intro = request.form['intro']
+    image = request.form['image']
+    sortie = request.form['sortie']
+    hotel = request.form['hotel']
+    db_lieux.update_one({"_id": ObjectId(id_post)},
+                       {"$set": {
+                         'ville' : ville,
+                         'continent': continent,
+                         'intro' : intro,
+                         'image' : image,
+                         'sortie' : sortie,
+                         'hotel' : hotel
+                       }})
+    return redirect(url_for("admin_lieux"))
+    
+##########################
+### SUPPRIMER UN LIEU ####
+##########################
+@app.route('/delete_lieu/<id_post>')
+def delete_lieu(id_post):
+  db_lieux = mongo.db.destination
+  lieu = db_lieux.delete_one({'_id': ObjectId(id_post)})
+  return redirect(url_for("admin_lieux", lieu=lieu))
 
 ##############
 ### ADMIN ####
